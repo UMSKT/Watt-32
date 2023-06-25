@@ -106,7 +106,7 @@ gen_djgpp ()
   # echo "#include <errno.h>" | $DJGPP_PREFIX-gcc -E -dD - | grep "#define E" > ../util/generrno.h
   # echo "#include <sys/version.h>" | $DJGPP_PREFIX-gcc -E -dD - | grep "#define __DJGPP" >> ../util/generrno.h
   # make -C ../util -f errnox.mak dj_err
-  # ../util/dj_err -s > build/djgpp/syserr.c
+  cp ../util/syserr.c build/djgpp/syserr.c
   # ../util/dj_err -e > ../inc/sys/djgpp.err
   #
   echo "Run GNU make to make target:"
